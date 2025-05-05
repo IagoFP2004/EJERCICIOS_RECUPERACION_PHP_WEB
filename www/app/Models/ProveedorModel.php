@@ -1,0 +1,70 @@
+<?php
+
+namespace Com\Daw2\Models;
+
+use Com\Daw2\Core\BaseDbModel;
+
+class ProveedorModel extends BaseDbModel
+{
+    public const ORDER_COLUMNS = ['p.cif','p.nombre','pais', 'p.email', 'p.telefono', 'numero_productos_diferentes_vendidos'];
+    public  function get(array $data, int $order) : array
+    {
+         $condiciones = [];
+         $condicionesHaving = [];
+         $valores = [];
+
+         if(!empty($data['cif'])){
+             $condiciones[] = "p.cif LIKE :cif";
+             $valores['cif'] = '%'.$data['cif'].'%';
+         }
+
+        if(!empty($data['nombre'])){
+            $condiciones[] = "p.nombre LIKE :nombre";
+            $valores['nombre'] = '%'.$data['nombre'].'%';
+        }
+
+        if(!empty($data['email'])){
+            $condiciones[] = "p.email LIKE :email";
+            $valores['email'] = '%'.$data['email'].'%';
+        }
+
+        if(!empty($data['min_productos'])){
+            $condicionesHaving[] = "numero_productos_diferentes_vendidos >= :min_productos";
+            $valores['min_productos'] = $data['min_productos'] ;
+        }
+
+        if(!empty($data['max_productos'])){
+            $condicionesHaving[] = "numero_productos_diferentes_vendidos <= :max_productos";
+            $valores['max_productos'] = $data['max_productos'] ;
+        }
+
+        if (!empty($data['id_pais']) && is_array($data['id_pais'])) {
+            $placeholders = [];
+            foreach ($data['id_pais'] as $index => $id_pais) {
+                $paramName = "id_pais_$index";
+                $placeholders[] = ":$paramName";
+                $valores[$paramName] = $id_pais;
+            }
+            $condiciones[] = "ac.id IN (" . implode(',', $placeholders) . ")";
+        }
+
+        $sentido = ($order > 0 ? 'ASC' : 'DESC');
+        $order = abs($order);
+
+        $sql = "SELECT p.cif , p.nombre, ac.country_name as pais, p.email, p.telefono , COUNT(DISTINCT p2.id_producto) as numero_productos_diferentes_vendidos 
+                FROM proveedor p 
+                LEFT JOIN aux_countries ac ON ac.id  = p.id_country 
+                LEFT JOIN producto p2 ON p2.proveedor  = p.cif ";
+         if(!empty($condiciones)){
+             $sql .= " WHERE ".implode(' AND ', $condiciones);
+         }
+         $sql.= " GROUP BY p.cif ";
+         if(!empty($condicionesHaving)){
+             $sql .= " HAVING ".implode(' AND ', $condicionesHaving);
+         }
+         $sql.= " ORDER BY ".self::ORDER_COLUMNS[$order-1]." ".$sentido;
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($valores);
+        return $stmt->fetchAll();
+    }
+}
