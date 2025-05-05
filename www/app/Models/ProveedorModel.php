@@ -76,4 +76,32 @@ class ProveedorModel extends BaseDbModel
         return $stmt->fetchColumn();
     }
 
+    public function getBycif(string $cif) : array | false
+    {
+        $sql = "SELECT * FROM proveedor WHERE cif = :cif";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['cif' => $cif]);
+        return $stmt->fetch();
+    }
+
+    public function insertarProveedor(array $data) : bool
+    {
+        $sql =" INSERT INTO `proveedor`(`cif`, `codigo`, `nombre`, `direccion`, `website`, `email`, `telefono`, `id_country`) 
+        VALUES (:cif,:codigo,:nombre,:direccion,:website,:email,:telefono,:id_country)";
+        $stmt = $this->pdo->prepare($sql);
+        if(empty($data['telefono'])){
+            $data['telefono'] = null;
+        }
+        return $stmt->execute([
+            'cif' => $data['cif'],
+            'codigo' => $data['codigo'],
+            'nombre' => $data['nombre'],
+            'direccion' => $data['direccion'],
+            'website' => $data['website'],
+            'email' => $data['email'],
+            'telefono' => $data['telefono'],
+            'id_country' => $data['id_country']
+        ]);
+    }
+
 }

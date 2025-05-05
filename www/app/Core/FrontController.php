@@ -13,6 +13,7 @@ class FrontController
 {
     public static function main()
     {
+        session_start();
         Route::add(
             '/',
             function () {
@@ -44,9 +45,18 @@ class FrontController
             '/proveedores/new',
             function () {
                 $controlador = new ProveedoresController();
-                $controlador->listado();
+                $controlador->menuAlta();
             },
             'get'
+        );
+
+        Route::add(
+            '/proveedores/new',
+            function () {
+                $controlador = new ProveedoresController();
+                $controlador->realizarAlta();
+            },
+            'post'
         );
 
 

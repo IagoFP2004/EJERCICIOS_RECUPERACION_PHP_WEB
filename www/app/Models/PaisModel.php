@@ -13,4 +13,13 @@ class PaisModel extends BaseDbModel
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    public function getID(int $id):bool
+    {
+        $sql = "SELECT * FROM aux_countries WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+        return $stmt->rowCount()===1;
+    }
 }

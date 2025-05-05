@@ -4,6 +4,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="card shadow mb-4">
+                    <?php if (!empty($_SESSION['mensaje'])){ ?>
+                        <div class="alert alert-success">
+                            <?php
+                            echo $_SESSION['mensaje'];
+                            ?>
+                        </div>
+                    <?php }?>
                     <form method="get" action="/proveedores">
                         <input type="hidden" name="order" value="1">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -60,6 +67,7 @@
                             <div class="col-12 text-right">
                                 <a href="/proveedores" value="" name="reiniciar" class="btn btn-danger">Reiniciar filtros</a>
                                 <input type="submit" value="Aplicar filtros" name="enviar" class="btn btn-primary ml-2">
+                                <a href="/proveedores/new" value="" name="reiniciar" class="btn btn-warning">Añadir proveedor</a>
                             </div>
                         </div>
                     </form>
