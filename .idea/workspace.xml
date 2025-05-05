@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/www/app/Controllers/ProveedoresController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/app/Models/PaisModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/app/Models/ProveedorModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/app/Views/proveedor.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/remote-mappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ud5.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Implementado barra lateral gestor de proveedores">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/.env" beforeDir="false" afterPath="$PROJECT_DIR$/www/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Controllers/ProveedoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/ProveedoresController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Models/ProveedorModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/ProveedorModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Views/proveedor.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/proveedor.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Views/templates/left-menu.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/templates/left-menu.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +23,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "IagoFP2004"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/IagoFP2004/EJERCICIOS_RECUPERACION_PHP_WEB.git",
+    "accountId": "cd4f672e-e66c-44f4-b263-2ab8f221a3cd"
+  }
+}]]></component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/www/vendor/vlucas/phpdotenv" />
@@ -77,6 +80,9 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="PHP" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="" />
@@ -86,11 +92,36 @@
       <updated>1746290949401</updated>
       <workItem from="1746290950493" duration="3522000" />
       <workItem from="1746374383002" duration="6016000" />
-      <workItem from="1746437017451" duration="586000" />
+      <workItem from="1746437017451" duration="1647000" />
+      <workItem from="1746460054501" duration="3638000" />
     </task>
+    <task id="LOCAL-00001" summary="Implementado barra lateral gestor de proveedores">
+      <option name="closed" value="true" />
+      <created>1746438794051</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746438794051</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implementado barra lateral gestor de proveedores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementado barra lateral gestor de proveedores" />
   </component>
 </project>

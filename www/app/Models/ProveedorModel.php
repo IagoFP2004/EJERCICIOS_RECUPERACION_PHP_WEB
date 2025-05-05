@@ -67,4 +67,13 @@ class ProveedorModel extends BaseDbModel
         $stmt->execute($valores);
         return $stmt->fetchAll();
     }
+
+    public function countRegistros(array $data) : int
+    {
+        $sql = "SELECT COUNT(*) FROM proveedor";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($data);
+        return $stmt->fetchColumn();
+    }
+
 }

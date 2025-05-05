@@ -102,37 +102,44 @@
                             </tbody>
                         </table>
                     </div>
+                    <!--
                     <div class="card-footer">
                         <nav aria-label="Navegacion por paginas">
                             <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="/proveedores?page=1&amp;order=1" aria-label="First">
-                                        <span aria-hidden="true">«</span>
-                                        <span class="sr-only">First</span>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="/proveedores?page=2&amp;order=1" aria-label="Previous">
-                                        <span aria-hidden="true">&lt;</span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
+                                <?php if($page > 1){ ?>
+                                    <li class="page-item">
+                                        <a class="page-link" href="<?php echo $_ENV['host.folder']. 'proveedores?'.$urlDos.'&page=1' ?>" aria-label="First">
+                                            <span aria-hidden="true">«</span>
+                                            <span class="sr-only">First</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="<?php echo $_ENV['host.folder']. 'proveedores?'.$urlDos.'&page='.($page - 1) ?>" aria-label="Previous">
+                                            <span aria-hidden="true">&lt;</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+                                <?php } ?>
 
-                                <li class="page-item active"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="/proveedores?page=4&amp;order=1" aria-label="Next">
-                                        <span aria-hidden="true">&gt;</span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="/proveedores?page=8&amp;order=1" aria-label="Last">
-                                        <span aria-hidden="true">»</span>
-                                        <span class="sr-only">Last</span>
-                                    </a>
-                                </li>
+                                <li class="page-item active"><a class="page-link" href="#"><?php echo $page ?></a></li>
+
+                                <?php if ($page < $max_page){ ?>
+                                    <li class="page-item">
+                                        <a class="page-link" href="<?php echo $_ENV['host.folder']. 'proveedores?'.$urlDos.'page='.($page + 1) ?>" aria-label="Next">
+                                            <span aria-hidden="true">&gt;</span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="<?php echo $_ENV['host.folder']. 'proveedores?'.$urlDos?> &page=<?php echo $max_page ?>" aria-label="Last">
+                                            <span aria-hidden="true">»</span>
+                                            <span class="sr-only">Last</span>
+                                        </a>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </nav>
+                -->
                     </div>
                 </div>
             </div>

@@ -40,6 +40,16 @@ class FrontController
             'get'
         );
 
+        Route::add(
+            '/proveedores/new',
+            function () {
+                $controlador = new ProveedoresController();
+                $controlador->listado();
+            },
+            'get'
+        );
+
+
         Route::pathNotFound(
             function () {
                 $controller = new \Com\Daw2\Controllers\ErroresController();
