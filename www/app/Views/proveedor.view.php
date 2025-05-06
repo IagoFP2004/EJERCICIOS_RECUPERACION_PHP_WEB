@@ -8,6 +8,7 @@
                         <div class="alert alert-success">
                             <?php
                             echo $_SESSION['mensaje'];
+                            unset($_SESSION['mensaje']);
                             ?>
                         </div>
                     <?php }?>
@@ -102,8 +103,8 @@
                                         <td><?php echo $lista['email'] ?></td>
                                         <td><?php echo $lista['telefono'] ?></td>
                                         <td><?php echo $lista['numero_productos_diferentes_vendidos'] ?></td>
-                                        <td><a href="tel: 931506210" target="_blank" class="btn btn-success ml-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="931506210"><i class="fas fa-phone"></i></a></td>
-                                        <td><a href="tel: 931506210" target="_blank" class="btn btn-danger ml-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="931506210"><i class="fas fa-trash"></i></a></td>
+                                        <td><a href="tel: 931506210" target="_blank" class="btn btn-success ml-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="931506210"><i class="fas fa-pen"></i></a></td>
+                                        <td><a href="<?php echo $_ENV['host.folder']. 'proveedores/delete/'.$lista['cif']?>" target="_blank" class="btn btn-danger ml-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="931506210"><i class="fas fa-trash"></i></a></td>
                                         <td><a href="tel: 931506210" target="_blank" class="btn btn-primary ml-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="931506210"><i class="fas fa-globe-europe"></i></a></td>
                                     </tr>
                                 <?php }?>

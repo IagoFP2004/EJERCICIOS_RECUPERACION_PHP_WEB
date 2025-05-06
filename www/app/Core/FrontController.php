@@ -59,6 +59,15 @@ class FrontController
             'post'
         );
 
+        Route::add(
+            '/proveedores/delete/([A-Z][0-9]{0,7}[A-Z])',
+            function ($cif) {
+                $controlador = new ProveedoresController();
+                $controlador->deleteProveedor((string)$cif);
+            },
+            'get'
+        );
+
 
         Route::pathNotFound(
             function () {

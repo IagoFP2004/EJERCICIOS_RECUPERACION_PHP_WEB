@@ -104,4 +104,34 @@ class ProveedorModel extends BaseDbModel
         ]);
     }
 
+    public function nosProvee(string $cif) :bool
+    {
+        $sql = "SELECT p.cif , p.nombre, ac.country_name as pais, p.email, p.telefono , COUNT(DISTINCT p2.id_producto) as numero_productos_diferentes_vendidos 
+                FROM proveedor p 
+                LEFT JOIN aux_countries ac ON ac.id  = p.id_country 
+                LEFT JOIN producto p2 ON p2.proveedor  = p.cif ";
+        $sql.= " WHERE p.cif = :cif ";
+        $sql.= " GROUP BY p.cif ";
+        $sql.= " HAVING numero_productos_diferentes_vendidos >= 1 ";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['cif' => $cif]);
+        return $stmt->fetch() !== false;
+    }
+
+    public function delete(string $cif): bool
+    {
+        // Si NOS provee, no lo eliminamos
+        if ($this->nosProvee($cif)) {
+            return false; // No se puede eliminar, aún nos provee
+        }
+
+        // Si NO nos provee, lo eliminamos
+        $sql = "DELETE FROM proveedor WHERE cif = :cif";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['cif' => $cif]);
+
+        return $stmt->rowCount() > 0;
+    }
+
+
 }

@@ -38,6 +38,7 @@ class ProveedoresController extends BaseController
 */
 
 
+
         $data['listado'] = $modelo->get($_GET,$data['order']);
 
         $this->view->showViews(array('templates/header.view.php', 'proveedor.view.php', 'templates/footer.view.php'), $data);
@@ -87,6 +88,21 @@ class ProveedoresController extends BaseController
         }
 
         $this->view->showViews(array('templates/header.view.php', 'proveedorAlta.view.php', 'templates/footer.view.php'), $data);
+    }
+
+    public function deleteProveedor(string $cif):void
+    {
+        $modelo = new ProveedorModel();
+        $borrar = $modelo->delete($cif);
+
+        if ($borrar !==false) {
+            $_SESSION['mensaje'] = "Proveedor eliminado correctamente";
+            header('Location: /proveedores');
+        }else{
+            $_SESSION['mensaje'] = "No se pudo eliminar el proveedor, este proveedor nos provee productos";
+            header('Location: /proveedores');
+        }
+
     }
 
     public function checkErrors(array $data):array
