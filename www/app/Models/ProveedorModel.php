@@ -120,12 +120,10 @@ class ProveedorModel extends BaseDbModel
 
     public function delete(string $cif): bool
     {
-        // Si NOS provee, no lo eliminamos
         if ($this->nosProvee($cif)) {
-            return false; // No se puede eliminar, aún nos provee
+            return false;
         }
 
-        // Si NO nos provee, lo eliminamos
         $sql = "DELETE FROM proveedor WHERE cif = :cif";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(['cif' => $cif]);

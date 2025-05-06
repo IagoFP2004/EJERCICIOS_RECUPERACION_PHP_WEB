@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card shadow mb-4">
-                    <?php if (!empty($_SESSION['mensaje'])){ ?>
+                    <?php if (isset($_SESSION['mensaje'])){ ?>
                         <div class="alert alert-success">
                             <?php
                             echo $_SESSION['mensaje'];
@@ -12,6 +12,15 @@
                             ?>
                         </div>
                     <?php }?>
+                    <?php if (isset($_SESSION['mensajeError'])){ ?>
+                        <div class="alert alert-danger">
+                            <?php
+                            echo $_SESSION['mensajeError'];
+                            unset($_SESSION['mensajeError']);
+                            ?>
+                        </div>
+                    <?php }?>
+
                     <form method="get" action="/proveedores">
                         <input type="hidden" name="order" value="1">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">

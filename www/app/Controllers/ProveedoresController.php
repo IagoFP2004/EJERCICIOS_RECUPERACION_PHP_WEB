@@ -77,7 +77,7 @@ class ProveedoresController extends BaseController
                 $_SESSION['mensaje'] = "Proveedor añadido correctamente";
                 header('Location: /proveedores');
             }else{
-                $_SESSION['mensaje'] = "No se pudo añadir el proveedor";
+                $_SESSION['mensajeError'] = "No se pudo añadir el proveedor";
                 header('Location: /proveedores');
             }
 
@@ -99,7 +99,7 @@ class ProveedoresController extends BaseController
             $_SESSION['mensaje'] = "Proveedor eliminado correctamente";
             header('Location: /proveedores');
         }else{
-            $_SESSION['mensaje'] = "No se pudo eliminar el proveedor, este proveedor nos provee productos";
+            $_SESSION['mensajeError'] = "No se pudo eliminar el proveedor, este proveedor nos provee productos";
             header('Location: /proveedores');
         }
 

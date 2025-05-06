@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Insertar proveedores listo con verificacion de los campos de entrada">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Controllers/ProveedoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/ProveedoresController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Models/ProveedorModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/ProveedorModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Views/proveedor.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/proveedor.view.php" afterDir="false" />
-    </list>
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Delete implementando y funcional en Gestor de Proveedores" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +89,7 @@
       <workItem from="1746437017451" duration="1647000" />
       <workItem from="1746460054501" duration="11301000" />
       <workItem from="1746544197746" duration="497000" />
-      <workItem from="1746544717291" duration="1024000" />
+      <workItem from="1746544717291" duration="1410000" />
     </task>
     <task id="LOCAL-00001" summary="Implementado barra lateral gestor de proveedores">
       <option name="closed" value="true" />
@@ -121,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746472819984</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Delete implementando y funcional en Gestor de Proveedores">
+      <option name="closed" value="true" />
+      <created>1746546121378</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746546121378</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +144,7 @@
     <MESSAGE value="Implementado barra lateral gestor de proveedores" />
     <MESSAGE value="Paginacion con necesidad de revision" />
     <MESSAGE value="Insertar proveedores listo con verificacion de los campos de entrada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Insertar proveedores listo con verificacion de los campos de entrada" />
+    <MESSAGE value="Delete implementando y funcional en Gestor de Proveedores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete implementando y funcional en Gestor de Proveedores" />
   </component>
 </project>
