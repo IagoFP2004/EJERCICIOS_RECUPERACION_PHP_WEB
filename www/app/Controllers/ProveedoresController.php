@@ -118,18 +118,60 @@ class ProveedoresController extends BaseController
 
         $modelo = new ProveedorModel();
         $data['proveedor'] = $modelo->getBycif($cif);
-        var_dump($data['proveedor']);;
+
         $this->view->showViews(array('templates/header.view.php', 'proveedorEdit.view.php', 'templates/footer.view.php'), $data);
     }
 
-    public function checkErrors(array $data):array
+    public function editarProveedor(string $cif):void
+    {
+        $data = array(
+            'titulo' => 'Gestion de proveedores',
+            'breadcrumb' => ['Inicio', 'Edicion de proveedores'],
+            'seccion' => '/proveedor/edit'
+        );
+
+        $modelo = new ProveedorModel();
+
+        $data['proveedor'] = filter_var_array($_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);;
+
+        $paisModel = new PaisModel();
+        $data['paises'] = $paisModel->getPaises();
+
+        $errors = $this->checkErrors($_POST, $cif);
+        if ($errors === []){
+            $editado = $modelo->updateProveedor([
+                'cif'=>$_POST['cif'],
+                'codigo'=>$_POST['codigo'],
+                'nombre'=>$_POST['nombre'],
+                'direccion'=>$_POST['direccion'],
+                'telefono'=>$_POST['telefono'],
+                'email'=>$_POST['email'],
+                'website'=>$_POST['website'],
+                'id_country'=>$_POST['id_country']
+            ],$cif);
+            if ($editado !==false) {
+                $_SESSION['mensaje'] = "Proveedor editado correctamente";
+                header('Location: /proveedores');;
+            }else{
+                $_SESSION['mensajeError'] = "No se pudo editar el proveedor";
+                header('Location: /proveedores');;
+            }
+        }else{
+            $data['errores'] = $errors;
+        }
+
+        $this->view->showViews(array('templates/header.view.php', 'proveedorEdit.view.php', 'templates/footer.view.php'), $data);
+
+    }
+
+    public function checkErrors(array $data, ?string $cifOriginal=null):array
     {
      $errors = [];
      $modelo = new ProveedorModel();
 
      if (empty($data['cif'])) {
          $errors['cif'] = 'CIF es requerido';
-     }elseif ($modelo->getBycif($data['cif']) !== false) {
+     }elseif ($data['cif'] !== $cifOriginal && $modelo->getBycif($data['cif']) !== false) {
          $errors['cif'] = 'El cif ya existe';
      }elseif (!isset($data['cif'])) {
          $errors['cif'] = 'El cif debe ser un texto';

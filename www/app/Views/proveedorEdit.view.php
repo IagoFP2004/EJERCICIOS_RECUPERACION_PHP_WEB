@@ -1,6 +1,6 @@
 <div class="col-12">
     <div class="card shadow mb-4">
-        <form method="post" action="/proveedores/new">
+        <form method="post" action="">
             <input type="hidden" name="order" value="1">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Filtros</h6>
@@ -73,8 +73,7 @@
             <div class="card-footer">
                 <div class="col-12 text-right">
                     <a href="/proveedores" value="" name="reiniciar" class="btn btn-danger">Cancelar</a>
-                    <input type="submit" value="Guardar" name="enviar" class="btn btn-primary ml-2">
-                    <a href="/proveedores/new" value="" name="reiniciar" class="btn btn-danger">Reiniciar filtros</a>
+                    <input type="submit" value="Guardar cambios" name="enviar" class="btn btn-primary ml-2">
                 </div>
             </div>
         </form>

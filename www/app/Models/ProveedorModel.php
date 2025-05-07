@@ -134,4 +134,18 @@ class ProveedorModel extends BaseDbModel
         return $stmt->rowCount() > 0;
     }
 
+    public function updateProveedor(array $data, string $cif) : bool
+    {
+        $sql ="UPDATE `proveedor` SET `cif`=:cif,`codigo`=:codigo,`nombre`=:nombre,`direccion`=:direccion,`website`=:website,`email`=:email,`telefono`=:telefono,`id_country`=:id_country WHERE `cif`=:cif";
+        $stmt = $this->pdo->prepare($sql);
+        if(empty($data['telefono'])){
+            $data['telefono'] = null;
+        }
+        if ($stmt->execute($data)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }

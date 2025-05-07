@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Delete implementando y funcional en Gestor de Proveedores">
-      <change afterPath="$PROJECT_DIR$/www/app/Views/proveedorEdit.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Paginacion arreglada implementada vista de edicion de proveedor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Controllers/ProveedoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/ProveedoresController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Models/ProveedorModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/ProveedorModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Views/proveedor.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/proveedor.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Views/proveedorEdit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/proveedorEdit.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +96,7 @@
       <workItem from="1746460054501" duration="11301000" />
       <workItem from="1746544197746" duration="497000" />
       <workItem from="1746544717291" duration="1410000" />
-      <workItem from="1746612737170" duration="2314000" />
+      <workItem from="1746612737170" duration="3059000" />
     </task>
     <task id="LOCAL-00001" summary="Implementado barra lateral gestor de proveedores">
       <option name="closed" value="true" />
@@ -134,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746546121378</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Paginacion arreglada implementada vista de edicion de proveedor">
+      <option name="closed" value="true" />
+      <created>1746615352257</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746615352257</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +160,7 @@
     <MESSAGE value="Paginacion con necesidad de revision" />
     <MESSAGE value="Insertar proveedores listo con verificacion de los campos de entrada" />
     <MESSAGE value="Delete implementando y funcional en Gestor de Proveedores" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete implementando y funcional en Gestor de Proveedores" />
+    <MESSAGE value="Paginacion arreglada implementada vista de edicion de proveedor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Paginacion arreglada implementada vista de edicion de proveedor" />
   </component>
 </project>
