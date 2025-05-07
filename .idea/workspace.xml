@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Delete implementando y funcional en Gestor de Proveedores" />
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Delete implementando y funcional en Gestor de Proveedores">
+      <change afterPath="$PROJECT_DIR$/www/app/Views/proveedorEdit.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Controllers/ProveedoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/ProveedoresController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Models/ProveedorModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/ProveedorModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Views/proveedor.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/proveedor.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +39,7 @@
     &quot;accountId&quot;: &quot;cd4f672e-e66c-44f4-b263-2ab8f221a3cd&quot;
   }
 }</component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php">
     <include_path>
       <path value="$PROJECT_DIR$/www/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/www/vendor/phpoption/phpoption" />
@@ -51,25 +60,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last.edited.regexp&quot;: &quot;665939982&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last.edited.regexp": "665939982",
+    "last_opened_file_path": "/home/iago.franciscoperez/Descargas/EJERCICIOS_RECUPERACION_PHP_WEB",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PS-243.23654.115" />
-        <option value="bundled-php-predefined-a98d8de5180a-4c3855d0ab16-com.jetbrains.php.sharedIndexes-PS-243.23654.115" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PS-251.23774.466" />
+        <option value="bundled-php-predefined-a98d8de5180a-aaeaa8632555-com.jetbrains.php.sharedIndexes-PS-251.23774.466" />
       </set>
     </attachedChunks>
   </component>
@@ -90,6 +100,7 @@
       <workItem from="1746460054501" duration="11301000" />
       <workItem from="1746544197746" duration="497000" />
       <workItem from="1746544717291" duration="1410000" />
+      <workItem from="1746612737170" duration="2314000" />
     </task>
     <task id="LOCAL-00001" summary="Implementado barra lateral gestor de proveedores">
       <option name="closed" value="true" />

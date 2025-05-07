@@ -7,7 +7,7 @@ use Com\Daw2\Core\BaseDbModel;
 class ProveedorModel extends BaseDbModel
 {
     public const ORDER_COLUMNS = ['p.cif','p.nombre','pais', 'p.email', 'p.telefono', 'numero_productos_diferentes_vendidos'];
-    public  function get(array $data, int $order) : array
+    public  function get(array $data, int $order, int $page) : array
     {
          $condiciones = [];
          $condicionesHaving = [];
@@ -51,6 +51,8 @@ class ProveedorModel extends BaseDbModel
         $sentido = ($order > 0 ? 'ASC' : 'DESC');
         $order = abs($order);
 
+        $limite = $_ENV['numero.pagina'];
+
         $sql = "SELECT p.cif , p.nombre, ac.country_name as pais, p.email, p.telefono , COUNT(DISTINCT p2.id_producto) as numero_productos_diferentes_vendidos 
                 FROM proveedor p 
                 LEFT JOIN aux_countries ac ON ac.id  = p.id_country 
@@ -63,6 +65,7 @@ class ProveedorModel extends BaseDbModel
              $sql .= " HAVING ".implode(' AND ', $condicionesHaving);
          }
          $sql.= " ORDER BY ".self::ORDER_COLUMNS[$order-1]." ".$sentido;
+         $sql.= " LIMIT  ".($page-1)*$limite.",".$limite;;
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($valores);
         return $stmt->fetchAll();
@@ -72,7 +75,7 @@ class ProveedorModel extends BaseDbModel
     {
         $sql = "SELECT COUNT(*) FROM proveedor";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute($data);
+        $stmt->execute();
         return $stmt->fetchColumn();
     }
 
@@ -130,6 +133,5 @@ class ProveedorModel extends BaseDbModel
 
         return $stmt->rowCount() > 0;
     }
-
 
 }

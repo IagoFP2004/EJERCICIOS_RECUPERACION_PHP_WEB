@@ -68,6 +68,15 @@ class FrontController
             'get'
         );
 
+        Route::add(
+            '/proveedores/edit/([A-Z][0-9]{0,7}[A-Z])',
+            function ($cif) {
+                $controlador = new ProveedoresController();
+                $controlador->showEdit((string)$cif);
+            },
+            'get'
+        );
+
 
         Route::pathNotFound(
             function () {

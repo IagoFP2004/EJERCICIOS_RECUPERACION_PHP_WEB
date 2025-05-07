@@ -25,7 +25,7 @@ class ProveedoresController extends BaseController
         $data['url']=http_build_query($copiaGet);
 
         $data['order'] = $this->getOrder();
-/*
+
         $copiaGet2 = $_GET;
         unset($copiaGet2['page']);
         $data['urlDos']=http_build_query($copiaGet2);
@@ -35,11 +35,11 @@ class ProveedoresController extends BaseController
 
         $data['page'] = $this->getNumberPage($page);
         $data['max_page'] = $page;
-*/
 
 
 
-        $data['listado'] = $modelo->get($_GET,$data['order']);
+
+        $data['listado'] = $modelo->get($_GET,$data['order'],$data['page']);;
 
         $this->view->showViews(array('templates/header.view.php', 'proveedor.view.php', 'templates/footer.view.php'), $data);
     }
@@ -103,6 +103,23 @@ class ProveedoresController extends BaseController
             header('Location: /proveedores');
         }
 
+    }
+
+    public function showEdit(string $cif):void
+    {
+        $data = array(
+            'titulo' => 'Gestion de proveedores',
+            'breadcrumb' => ['Inicio', 'Edicion de proveedores'],
+            'seccion' => '/proveedor/edit'
+        );
+
+        $paisModel = new PaisModel();
+        $data['paises'] = $paisModel->getPaises();
+
+        $modelo = new ProveedorModel();
+        $data['proveedor'] = $modelo->getBycif($cif);
+        var_dump($data['proveedor']);;
+        $this->view->showViews(array('templates/header.view.php', 'proveedorEdit.view.php', 'templates/footer.view.php'), $data);
     }
 
     public function checkErrors(array $data):array
@@ -184,7 +201,7 @@ class ProveedoresController extends BaseController
     public function getNumberPage($page):int
     {
         if (isset($_GET['page'])){
-            if($_GET['page'] >-4 && $_GET['page']<4){
+            if($_GET['page'] >-4 && $_GET['page']<=4){
                 return (int)$_GET['page'];
             }
         }
