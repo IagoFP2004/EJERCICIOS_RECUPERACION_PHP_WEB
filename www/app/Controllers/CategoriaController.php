@@ -39,6 +39,21 @@ class CategoriaController extends BaseController
         $this->view->showViews(array('templates/header.view.php', 'categorias.view.php', 'templates/footer.view.php'), $data);
     }
 
+    public function deleteCategoria($id_categoria):void
+    {
+        $modelo = new CategoriaModel();
+        $borrado = $modelo->delete($id_categoria);
+
+        if ($borrado !== false) {
+            $_SESSION['mensaje'] = "Categoria eliminada correctamente";
+            header('Location: /categoria');
+        }else{
+            $_SESSION['mensajeError'] = "No se pudo eliminar la categoria, contiene productos";
+            header('Location: /categoria');
+        }
+
+    }
+
     public function getOrder():int
     {
         if (isset($_GET['order']) && is_numeric($_GET['order'])) {

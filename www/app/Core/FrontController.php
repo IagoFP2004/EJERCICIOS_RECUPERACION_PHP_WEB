@@ -98,6 +98,16 @@ class FrontController
             'get'
         );
 
+        Route::add(
+            '/categoria/delete/([0-9]+)',
+            function ($id_categoria) {
+                $controlador = new CategoriaController();
+                $controlador->deleteCategoria((int) $id_categoria);
+            },
+            'get'
+        );
+
+
 
         Route::pathNotFound(
             function () {

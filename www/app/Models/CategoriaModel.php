@@ -36,7 +36,8 @@ class CategoriaModel extends BaseDbModel
         $sql = "SELECT 
                 c.nombre_categoria AS nombre_categoria,
                 CONCAT_WS(' > ', c3.nombre_categoria, c2.nombre_categoria, c.nombre_categoria) AS nombre_completo_categoria,
-                COUNT(DISTINCT p.id_producto) as numero_articulos
+                COUNT(DISTINCT p.id_producto) as numero_articulos,
+                c.id_categoria
             FROM categoria c 
             LEFT JOIN categoria c2 ON c.id_padre = c2.id_categoria
             LEFT JOIN categoria c3 ON c2.id_padre = c3.id_categoria
@@ -67,5 +68,35 @@ class CategoriaModel extends BaseDbModel
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         return $stmt->fetchColumn();
+    }
+
+    public function tieneProductos(int $id_categoria):bool
+    {
+        $sql = "SELECT 
+                c.nombre_categoria AS nombre_categoria,
+                CONCAT_WS(' > ', c3.nombre_categoria, c2.nombre_categoria, c.nombre_categoria) AS nombre_completo_categoria,
+                COUNT(DISTINCT p.id_producto) as numero_articulos
+            FROM categoria c 
+            LEFT JOIN categoria c2 ON c.id_padre = c2.id_categoria
+            LEFT JOIN categoria c3 ON c2.id_padre = c3.id_categoria
+            LEFT JOIN producto p ON p.id_categoria = c.id_categoria ";
+        $sql.= "WHERE c.id_categoria = :id_categoria";
+        $sql.= " GROUP BY c.id_categoria";
+        $sql.=" HAVING numero_articulos > 1";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([":id_categoria" => $id_categoria]);
+        return $stmt->fetch() !== false;
+    }
+
+    public function delete(int $id_categoria ):bool
+    {
+        if ($this->tieneProductos($id_categoria)) {
+            return false;
+        }
+
+        $sql = "DELETE FROM categoria WHERE id_categoria = :id_categoria";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([":id_categoria" => $id_categoria]);
+        return $stmt->rowCount() > 0;
     }
 }

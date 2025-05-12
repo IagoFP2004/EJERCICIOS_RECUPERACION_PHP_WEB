@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Seccion categorias implementadas en el left-menu">
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Listado soporta paginacion y ordenacion filtrado finalizado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Controllers/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/CategoriaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Models/CategoriaModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/CategoriaModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Views/categorias.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/categorias.view.php" afterDir="false" />
     </list>
@@ -154,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747058754096</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Listado soporta paginacion y ordenacion filtrado finalizado">
+      <option name="closed" value="true" />
+      <created>1747066050433</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747066050433</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +188,7 @@
     <MESSAGE value="Paginacion arreglada implementada vista de edicion de proveedor" />
     <MESSAGE value="Iniciando ejercicio2 sobre Categorias" />
     <MESSAGE value="Seccion categorias implementadas en el left-menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seccion categorias implementadas en el left-menu" />
+    <MESSAGE value="Listado soporta paginacion y ordenacion filtrado finalizado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Listado soporta paginacion y ordenacion filtrado finalizado" />
   </component>
 </project>
