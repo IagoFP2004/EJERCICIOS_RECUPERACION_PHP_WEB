@@ -13,6 +13,7 @@ class FrontController
 {
     public static function main()
     {
+        //Ejercicio1
         session_start();
         Route::add(
             '/',
