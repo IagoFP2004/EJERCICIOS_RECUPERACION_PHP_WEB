@@ -58,6 +58,7 @@
                             <div class="col-12 text-right">
                                 <a href="/categoria" value="" name="reiniciar" class="btn btn-danger">Reiniciar filtros</a>
                                 <input type="submit" value="Aplicar filtros" name="enviar" class="btn btn-primary ml-2">
+                                    <a href="/categoria/new" value="" name="reiniciar" class="btn btn-warning">Nueva Categoria</a>
                             </div>
                         </div>
                     </form>

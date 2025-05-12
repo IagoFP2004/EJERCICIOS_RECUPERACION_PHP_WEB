@@ -54,6 +54,50 @@ class CategoriaController extends BaseController
 
     }
 
+    public function menuAlta():void
+    {
+        $data = array(
+            'titulo' => 'Gestion de categorias',
+            'breadcrumb' => ['Inicio'],
+            'seccion' => '/inicio/categorias/Alta Categoria'
+        );
+
+        $modelo = new CategoriaModel();
+
+        $data['padre'] = $modelo->getPadres();
+
+        $this->view->showViews(array('templates/header.view.php', 'categoriasAlta.view.php', 'templates/footer.view.php'), $data);
+    }
+
+    public function RealizarAltaCategoria():void
+    {
+        $data = array(
+            'titulo' => 'Gestion de categorias',
+            'breadcrumb' => ['Inicio'],
+            'seccion' => '/inicio/categorias/Alta Categoria'
+        );
+
+        $modelo = new CategoriaModel();
+        $errores = $this->checkData($_POST);
+
+        if($errores === []){
+            $insertado = $modelo->insert($_POST);
+
+            if ($insertado !== false) {
+                $_SESSION['mensaje'] = "Categoria almacenada correctamente";
+                header('Location: /categoria');
+            }else{
+                $_SESSION['mensajeError'] = "No se pudo almacenar la categoria";
+                header('Location: /categoria');
+            }
+        }else{
+            $data['errores'] = $errores;
+            $data['padre'] = $modelo->getPadres();
+
+        }
+        $this->view->showViews(array('templates/header.view.php', 'categoriasAlta.view.php', 'templates/footer.view.php'), $data);
+    }
+
     public function getOrder():int
     {
         if (isset($_GET['order']) && is_numeric($_GET['order'])) {
@@ -79,5 +123,27 @@ class CategoriaController extends BaseController
             }
         }
         return 1;
+    }
+
+    public function checkData(array $data):array
+    {
+        $errores = [];
+        $modelo = new CategoriaModel();
+
+        if(empty($data['nombre'])){
+            $errores['nombre'] = 'Nombre es requerido';
+        }else if (!is_string($data['nombre'])){
+            $errores['nombre'] = 'Nombre debe ser un string';
+        }else if(mb_strlen($data['nombre']) > 50){
+            $errores['nombre'] = 'Nombre no debe tener mas de 50 caracteres';
+        }
+
+        if (!empty($data['id_padre'])) {
+            if($modelo->getPadres() === false){
+                $errores['id_padre'] = 'El padre seleccionado no es valido';
+            }
+        }
+
+        return $errores;
     }
 }

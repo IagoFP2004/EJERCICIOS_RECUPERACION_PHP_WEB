@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Listado soporta paginacion y ordenacion filtrado finalizado">
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Delete implementado en categorias">
+      <change afterPath="$PROJECT_DIR$/www/app/Views/CategoriasAlta.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Controllers/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/CategoriaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Models/CategoriaModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/CategoriaModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Views/categorias.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/categorias.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Views/proveedorAlta.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/proveedorAlta.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747066050433</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Delete implementado en categorias">
+      <option name="closed" value="true" />
+      <created>1747067653988</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747067653989</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +199,7 @@
     <MESSAGE value="Iniciando ejercicio2 sobre Categorias" />
     <MESSAGE value="Seccion categorias implementadas en el left-menu" />
     <MESSAGE value="Listado soporta paginacion y ordenacion filtrado finalizado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Listado soporta paginacion y ordenacion filtrado finalizado" />
+    <MESSAGE value="Delete implementado en categorias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete implementado en categorias" />
   </component>
 </project>

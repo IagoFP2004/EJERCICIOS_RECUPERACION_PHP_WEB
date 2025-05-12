@@ -56,6 +56,27 @@ class CategoriaModel extends BaseDbModel
         return $stmt->fetchAll();
     }
 
+    public function insert(array $data):bool
+    {
+        $sql = "INSERT INTO categoria(nombre_categoria,id_padre)";
+        $sql.= " VALUES (:nombre_categoria,:id_padre)";
+        $stmt = $this->pdo->prepare($sql);
+        if (empty($data['id_padre'])) {
+            $data['id_padre'] = NULL;
+        }
+        return $stmt->execute(['nombre_categoria'=>$data['nombre'],'id_padre'=>$data['id_padre']]);
+    }
+
+    public function getPadres():array|false
+    {
+        $sql = "SELECT DISTINCT  c2.id_padre , c2.nombre_categoria 
+                FROM categoria c 
+                LEFT JOIN categoria c2 on c2.id_categoria = c.id_padre ";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     public function countResults():int
     {
         $sql = "SELECT 

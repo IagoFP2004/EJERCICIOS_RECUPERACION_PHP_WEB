@@ -99,6 +99,24 @@ class FrontController
         );
 
         Route::add(
+            '/categoria/new',
+            function () {
+                $controlador = new CategoriaController();
+                $controlador->menuAlta();
+            },
+            'get'
+        );
+
+        Route::add(
+            '/categoria/new',
+            function () {
+                $controlador = new CategoriaController();
+                $controlador->RealizarAltaCategoria();
+            },
+            'post'
+        );
+
+        Route::add(
             '/categoria/delete/([0-9]+)',
             function ($id_categoria) {
                 $controlador = new CategoriaController();
