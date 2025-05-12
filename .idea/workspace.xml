@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Paginacion arreglada implementada vista de edicion de proveedor">
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Iniciando ejercicio2 sobre Categorias">
+      <change afterPath="$PROJECT_DIR$/www/app/Views/categorias.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Controllers/ProveedoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/ProveedoresController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Controllers/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/CategoriaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Views/proveedorEdit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/proveedorEdit.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Views/templates/left-menu.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/templates/left-menu.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,21 +57,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last.edited.regexp": "665939982",
-    "last_opened_file_path": "/home/iago.franciscoperez/Descargas/EJERCICIOS_RECUPERACION_PHP_WEB",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last.edited.regexp&quot;: &quot;665939982&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/iago.franciscoperez/Descargas/EJERCICIOS_RECUPERACION_PHP_WEB&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -138,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746615352257</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Iniciando ejercicio2 sobre Categorias">
+      <option name="closed" value="true" />
+      <created>1747057169722</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747057169722</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +170,7 @@
     <MESSAGE value="Insertar proveedores listo con verificacion de los campos de entrada" />
     <MESSAGE value="Delete implementando y funcional en Gestor de Proveedores" />
     <MESSAGE value="Paginacion arreglada implementada vista de edicion de proveedor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Paginacion arreglada implementada vista de edicion de proveedor" />
+    <MESSAGE value="Iniciando ejercicio2 sobre Categorias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Iniciando ejercicio2 sobre Categorias" />
   </component>
 </project>

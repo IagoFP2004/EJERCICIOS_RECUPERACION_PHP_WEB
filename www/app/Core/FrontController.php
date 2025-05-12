@@ -87,6 +87,17 @@ class FrontController
             'post'
         );
 
+        //Ejercicio2
+
+        Route::add(
+            '/categoria',
+            function () {
+                $controlador = new CategoriaController();
+                $controlador->listado();
+            },
+            'get'
+        );
+
 
         Route::pathNotFound(
             function () {
