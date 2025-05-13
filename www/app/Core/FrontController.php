@@ -125,6 +125,24 @@ class FrontController
             'get'
         );
 
+        Route::add(
+            '/categoria/edit/([0-9]+)',
+            function ($id_categoria) {
+                $controlador = new CategoriaController();
+                $controlador->mostrarVistaEdicion((int) $id_categoria);
+            },
+            'get'
+        );
+
+        Route::add(
+            '/categoria/edit/([0-9]+)',
+            function ($id_categoria) {
+                $controlador = new CategoriaController();
+                $controlador->editarCategoria((int) $id_categoria);
+            },
+            'post'
+        );
+
 
 
         Route::pathNotFound(

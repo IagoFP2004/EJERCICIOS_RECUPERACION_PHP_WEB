@@ -87,7 +87,7 @@
                                     <td><?php echo $item['nombre_categoria']?></td>
                                     <td><?php echo $item['nombre_completo_categoria']?></td>
                                     <td><?php echo $item['numero_articulos']?></td>
-                                    <td><a href="" target="_blank" class="btn btn-success ml-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="931506210"><i class="fas fa-pen"></i></a></td>
+                                    <td><a href="<?php echo $_ENV['host.folder'].'categoria/edit/'.$item['id_categoria'] ?>" target="_blank" class="btn btn-success ml-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="931506210"><i class="fas fa-pen"></i></a></td>
                                     <td><a href="<?php echo $_ENV['host.folder'].'categoria/delete/'.$item['id_categoria'] ?>" target="_blank" class="btn btn-danger ml-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="931506210"><i class="fas fa-trash"></i></a></td>
                                 </tr>
                             <?php }?>

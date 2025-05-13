@@ -98,6 +98,58 @@ class CategoriaController extends BaseController
         $this->view->showViews(array('templates/header.view.php', 'categoriasAlta.view.php', 'templates/footer.view.php'), $data);
     }
 
+    public function mostrarVistaEdicion(int $id_categoria):void
+    {
+        $data = array(
+            'titulo' => 'Edicion de categorias',
+            'breadcrumb' => ['Inicio'],
+            'seccion' => '/inicio/categorias/Modificar Categoria'
+        );
+
+        $modelo = new CategoriaModel();
+
+        $data['categorias']=$modelo->getCategoriaByid($id_categoria);
+        $data['padres'] = $modelo->getPadres();
+
+        $this->view->showViews(array('templates/header.view.php', 'categoriasEdit.view.php', 'templates/footer.view.php'), $data);
+    }
+
+    public function editarCategoria(int $id_categoria):void
+    {
+        $data = array(
+            'titulo' => 'Edicion de categorias',
+            'breadcrumb' => ['Inicio'],
+            'seccion' => '/inicio/categorias/Modificar Categoria'
+        );
+
+        $modelo = new CategoriaModel();
+
+
+        $data['categorias']=filter_var_array($_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $data['padres'] = $modelo->getPadres();
+
+        $errores = $this->checkData($_POST);
+
+        if($errores === []){
+            $edicion = $modelo->updateCategoria($id_categoria, [
+                'nombre_categoria' => $_POST['nombre'],
+                'id_padre' => $_POST['id_padre']
+            ]);
+            if ($edicion !== false) {
+                $_SESSION['mensaje'] = "Categoria modificada correctamente";
+                header('Location: /categoria');
+            }else{
+                $_SESSION['mensajeError'] = "No se pudo modificar la categoria";
+                header('Location: /categoria');
+            }
+        }else{
+            $data['errores'] = $errores;
+        }
+
+
+        $this->view->showViews(array('templates/header.view.php', 'categoriasEdit.view.php', 'templates/footer.view.php'), $data);
+    }
+
     public function getOrder():int
     {
         if (isset($_GET['order']) && is_numeric($_GET['order'])) {

@@ -67,6 +67,14 @@ class CategoriaModel extends BaseDbModel
         return $stmt->execute(['nombre_categoria'=>$data['nombre'],'id_padre'=>$data['id_padre']]);
     }
 
+    public function getCategoriaByid(int $id):array
+    {
+        $sql = "SELECT * FROM categoria WHERE id_categoria = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([":id"=>$id]);
+        return $stmt->fetch();
+    }
+
     public function getPadres():array|false
     {
         $sql = "SELECT DISTINCT  c2.id_padre , c2.nombre_categoria 
@@ -119,5 +127,20 @@ class CategoriaModel extends BaseDbModel
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([":id_categoria" => $id_categoria]);
         return $stmt->rowCount() > 0;
+    }
+
+    public function updateCategoria(int $id_categoria, array $data):bool
+    {
+        $sql = "UPDATE categoria SET `nombre_categoria` = :nombre_categoria, `id_padre` = :id_padre WHERE id_categoria = :id_categoria";
+        $stmt = $this->pdo->prepare($sql);
+        if (empty($data['id_padre'])) {
+            $data['id_padre'] = NULL;
+        }
+        $data['id_categoria'] = $id_categoria;
+        if ($stmt->execute($data)) {
+            return true;
+        }else{
+            return false;
+        }
     }
 }

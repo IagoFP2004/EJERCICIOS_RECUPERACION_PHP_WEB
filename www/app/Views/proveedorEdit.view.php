@@ -72,7 +72,7 @@
             </div>
             <div class="card-footer">
                 <div class="col-12 text-right">
-                    <a href="/proveedores" value="" name="reiniciar" class="btn btn-danger">Cancelar</a>
+                    <a href="/categoria" value="" name="reiniciar" class="btn btn-danger">Cancelar</a>
                     <input type="submit" value="Guardar cambios" name="enviar" class="btn btn-primary ml-2">
                 </div>
             </div>
