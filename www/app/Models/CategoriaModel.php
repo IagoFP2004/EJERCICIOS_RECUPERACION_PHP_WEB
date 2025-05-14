@@ -77,7 +77,7 @@ class CategoriaModel extends BaseDbModel
 
     public function getPadres():array|false
     {
-        $sql = "SELECT DISTINCT  c2.id_padre , c2.nombre_categoria 
+        $sql = "SELECT DISTINCT  c2.id_padre , c2.nombre_categoria
                 FROM categoria c 
                 LEFT JOIN categoria c2 on c2.id_categoria = c.id_padre ";
         $stmt = $this->pdo->prepare($sql);

@@ -111,7 +111,7 @@ class FrontController
             '/categoria/new',
             function () {
                 $controlador = new CategoriaController();
-                $controlador->RealizarAltaCategoria();
+                $controlador->realizarAltaCategoria();
             },
             'post'
         );

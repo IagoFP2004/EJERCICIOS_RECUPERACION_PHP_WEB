@@ -12,7 +12,7 @@
                     <div class="col-12 col-lg-4">
                         <div class="mb-3">
                             <label for="nombre_completo">Nombre:</label>
-                            <input type="text" class="form-control" name="nombre" id="nombre" value="">
+                            <input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $categorias['nombre'] ?? ''?><?php echo $categorias['nombre_categoria'] ?? '' ?>">
                             <p class="text-danger small"><?php  echo $errores['nombre'] ?? '' ?></p>
                         </div>
                     </div>
@@ -20,8 +20,9 @@
                         <div class="mb-3">
                             <label for="id_padre">Padre:</label>
                             <select name="id_padre" id="id_padre" class="form-control" data-placeholder="Padre">
-                                <?php foreach ($padre as $padre){ ?>
-                                    <option value="<?php echo $padre['id_padre'] ?>"><?php echo $padre['nombre_categoria'] ?></option>
+                                <?php foreach ($padres as $padre){ ?>
+                                    <option value="<?php echo $padre['id_padre'] ?>" <?php echo (isset($categorias['id_padre']) && $categorias['id_padre'] == $padre['id_padre'] ? 'selected' : '') ?>>
+                                        <?php echo $padre['nombre_categoria'] ?></option>
                                 <?php } ?>
                             </select>
                             <p class="text-danger small"><?php  echo $errores['id_padre'] ?? '' ?></p>

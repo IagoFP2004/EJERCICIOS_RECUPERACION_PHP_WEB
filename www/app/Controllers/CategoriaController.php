@@ -57,25 +57,26 @@ class CategoriaController extends BaseController
     public function menuAlta():void
     {
         $data = array(
-            'titulo' => 'Gestion de categorias',
+            'titulo' => 'Alta de categorias',
             'breadcrumb' => ['Inicio'],
             'seccion' => '/inicio/categorias/Alta Categoria'
         );
 
         $modelo = new CategoriaModel();
 
-        $data['padre'] = $modelo->getPadres();
+        $data['padres'] = $modelo->getPadres();
 
         $this->view->showViews(array('templates/header.view.php', 'categoriasAlta.view.php', 'templates/footer.view.php'), $data);
     }
 
-    public function RealizarAltaCategoria():void
+    public function realizarAltaCategoria():void
     {
         $data = array(
-            'titulo' => 'Gestion de categorias',
+            'titulo' => 'Alta de categorias',
             'breadcrumb' => ['Inicio'],
             'seccion' => '/inicio/categorias/Alta Categoria'
         );
+
 
         $modelo = new CategoriaModel();
         $errores = $this->checkData($_POST);
@@ -92,7 +93,8 @@ class CategoriaController extends BaseController
             }
         }else{
             $data['errores'] = $errores;
-            $data['padre'] = $modelo->getPadres();
+            $data['padres'] = $modelo->getPadres();
+            $data['categorias'] = filter_var_array($_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         }
         $this->view->showViews(array('templates/header.view.php', 'categoriasAlta.view.php', 'templates/footer.view.php'), $data);
@@ -111,7 +113,7 @@ class CategoriaController extends BaseController
         $data['categorias']=$modelo->getCategoriaByid($id_categoria);
         $data['padres'] = $modelo->getPadres();
 
-        $this->view->showViews(array('templates/header.view.php', 'categoriasEdit.view.php', 'templates/footer.view.php'), $data);
+        $this->view->showViews(array('templates/header.view.php', 'categoriasAlta.view.php', 'templates/footer.view.php'), $data);
     }
 
     public function editarCategoria(int $id_categoria):void
