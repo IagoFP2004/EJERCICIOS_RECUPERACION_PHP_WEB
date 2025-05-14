@@ -149,7 +149,7 @@ class CategoriaController extends BaseController
         }
 
 
-        $this->view->showViews(array('templates/header.view.php', 'categoriasEdit.view.php', 'templates/footer.view.php'), $data);
+        $this->view->showViews(array('templates/header.view.php', 'categoriasAlta.view.php', 'templates/footer.view.php'), $data);
     }
 
     public function getOrder():int

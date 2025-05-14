@@ -35,12 +35,14 @@ class CategoriaModel extends BaseDbModel
 
         $sql = "SELECT 
                 c.nombre_categoria AS nombre_categoria,
-                CONCAT_WS(' > ', c3.nombre_categoria, c2.nombre_categoria, c.nombre_categoria) AS nombre_completo_categoria,
+                CONCAT_WS(' > ', c5.nombre_categoria,c4.nombre_categoria,c3.nombre_categoria, c2.nombre_categoria, c.nombre_categoria) AS nombre_completo_categoria,
                 COUNT(DISTINCT p.id_producto) as numero_articulos,
                 c.id_categoria
             FROM categoria c 
             LEFT JOIN categoria c2 ON c.id_padre = c2.id_categoria
             LEFT JOIN categoria c3 ON c2.id_padre = c3.id_categoria
+            LEFT JOIN categoria c4 ON c3.id_padre = c4.id_categoria
+            LEFT JOIN categoria c5 ON c4.id_padre = c5.id_categoria
             LEFT JOIN producto p ON p.id_categoria = c.id_categoria ";
         if (!empty($condiciones)) {
             $sql .= " WHERE ".implode(' AND ', $condiciones);
@@ -58,16 +60,19 @@ class CategoriaModel extends BaseDbModel
 
     public function insert(array $data):bool
     {
-        $sql = "INSERT INTO categoria(nombre_categoria,id_padre)";
-        $sql.= " VALUES (:nombre_categoria,:id_padre)";
+        $sql = "INSERT INTO categoria(nombre_categoria, id_padre) 
+            VALUES (:nombre_categoria, :id_padre)";
         $stmt = $this->pdo->prepare($sql);
-        if (empty($data['id_padre'])) {
-            $data['id_padre'] = NULL;
-        }
-        return $stmt->execute(['nombre_categoria'=>$data['nombre'],'id_padre'=>$data['id_padre']]);
+
+        $params = [
+            'nombre_categoria' => $data['nombre'],
+            'id_padre' => empty($data['id_padre']) ? null : $data['id_padre']
+        ];
+
+        return $stmt->execute($params);
     }
 
-    public function getCategoriaByid(int $id):array
+    public function getCategoriaByid(int $id):array | false
     {
         $sql = "SELECT * FROM categoria WHERE id_categoria = :id";
         $stmt = $this->pdo->prepare($sql);
@@ -77,9 +82,22 @@ class CategoriaModel extends BaseDbModel
 
     public function getPadres():array|false
     {
-        $sql = "SELECT DISTINCT  c2.id_padre , c2.nombre_categoria
-                FROM categoria c 
-                LEFT JOIN categoria c2 on c2.id_categoria = c.id_padre ";
+        $sql = "SELECT 
+            c.id_categoria as id_padre,
+            CONCAT_WS(' > ', 
+                c5.nombre_categoria,
+                c4.nombre_categoria,
+                c3.nombre_categoria,
+                c2.nombre_categoria, 
+                c.nombre_categoria
+            ) as nombre_completo_categoria
+            FROM categoria c 
+            LEFT JOIN categoria c2 ON c.id_padre = c2.id_categoria
+            LEFT JOIN categoria c3 ON c2.id_padre = c3.id_categoria
+            LEFT JOIN categoria c4 ON c3.id_padre = c4.id_categoria
+            LEFT JOIN categoria c5 ON c4.id_padre = c5.id_categoria
+            WHERE c5.id_categoria IS NULL 
+            ORDER BY nombre_completo_categoria";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -131,16 +149,19 @@ class CategoriaModel extends BaseDbModel
 
     public function updateCategoria(int $id_categoria, array $data):bool
     {
-        $sql = "UPDATE categoria SET `nombre_categoria` = :nombre_categoria, `id_padre` = :id_padre WHERE id_categoria = :id_categoria";
+        $sql = "UPDATE categoria 
+            SET nombre_categoria = :nombre_categoria, 
+                id_padre = :id_padre 
+            WHERE id_categoria = :id_categoria";
+
         $stmt = $this->pdo->prepare($sql);
-        if (empty($data['id_padre'])) {
-            $data['id_padre'] = NULL;
-        }
-        $data['id_categoria'] = $id_categoria;
-        if ($stmt->execute($data)) {
-            return true;
-        }else{
-            return false;
-        }
+        $params = [
+            'nombre_categoria' => $data['nombre_categoria'],
+            'id_padre' => empty($data['id_padre']) ? null : $data['id_padre'],
+            'id_categoria' => $id_categoria
+        ];
+
+        return $stmt->execute($params);
     }
+
 }

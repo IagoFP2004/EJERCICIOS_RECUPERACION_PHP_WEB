@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="">
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Cuando da un error se muestran los datos enviados ahora solo se usa una vista para editar y alta">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Controllers/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/CategoriaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Models/CategoriaModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/CategoriaModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Views/CategoriasAlta.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/categoriasAlta.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Views/categoriasAlta.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/categoriasAlta.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +35,6 @@
     &quot;accountId&quot;: &quot;cd4f672e-e66c-44f4-b263-2ab8f221a3cd&quot;
   }
 }</component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="7d52ab47-a3aa-483f-932b-c2d59f541c06" name="localhost" port="8080" use_path_mappings="true">
@@ -192,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747071058216</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Cuando da un error se muestran los datos enviados ahora solo se usa una vista para editar y alta">
+      <option name="closed" value="true" />
+      <created>1747220101083</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747220101083</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,17 +226,7 @@
     <MESSAGE value="Listado soporta paginacion y ordenacion filtrado finalizado" />
     <MESSAGE value="Delete implementado en categorias" />
     <MESSAGE value="Insert  implementado en categorias con validacion de datos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Insert  implementado en categorias con validacion de datos" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/www/app/Views/categoriasAlta.view.php</url>
-          <line>23</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Cuando da un error se muestran los datos enviados ahora solo se usa una vista para editar y alta" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cuando da un error se muestran los datos enviados ahora solo se usa una vista para editar y alta" />
   </component>
 </project>
