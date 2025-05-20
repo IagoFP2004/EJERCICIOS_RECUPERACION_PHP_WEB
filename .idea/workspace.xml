@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Iniciando ejercicio Productos">
-      <change afterPath="$PROJECT_DIR$/www/app/Views/productos.view.php" afterDir="false" />
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Listasdo listo en productos y categorias y proveedores cargados desde el modelo en EJERCICIO PRODUCTOS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Models/ProveedorModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/ProveedorModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Views/productos.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/productos.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747753967596</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Listasdo listo en productos y categorias y proveedores cargados desde el modelo en EJERCICIO PRODUCTOS">
+      <option name="closed" value="true" />
+      <created>1747757026768</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747757026768</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +245,7 @@
     <MESSAGE value="Cuando da un error se muestran los datos enviados ahora solo se usa una vista para editar y alta" />
     <MESSAGE value="Edicion implementada en categorias Ejercicio pendiente de revision" />
     <MESSAGE value="Iniciando ejercicio Productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Iniciando ejercicio Productos" />
+    <MESSAGE value="Listasdo listo en productos y categorias y proveedores cargados desde el modelo en EJERCICIO PRODUCTOS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Listasdo listo en productos y categorias y proveedores cargados desde el modelo en EJERCICIO PRODUCTOS" />
   </component>
 </project>

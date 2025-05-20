@@ -21,7 +21,7 @@ class ProductoController extends BaseController
         $proveedoresModel = new ProveedorModel();
         $categoriasModel = new CategoriaModel();
 
-        $data['productos'] = $modelo->get();
+        $data['productos'] = $modelo->get($_GET);
         $data['proveedores'] = $proveedoresModel->getAllProveedores();
         $data['categorias'] = $categoriasModel->getAllCategorias();
 
