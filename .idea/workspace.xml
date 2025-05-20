@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Cuando da un error se muestran los datos enviados ahora solo se usa una vista para editar y alta">
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Edicion implementada en categorias Ejercicio pendiente de revision">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Controllers/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/CategoriaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Models/CategoriaModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/CategoriaModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Views/categoriasAlta.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/categoriasAlta.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,22 +63,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last.edited.regexp": "665939982",
-    "last_opened_file_path": "/home/iago.franciscoperez/Descargas/EJERCICIOS_RECUPERACION_PHP_WEB/www",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.php.debug.servers",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last.edited.regexp&quot;: &quot;665939982&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/iago.franciscoperez/Descargas/EJERCICIOS_RECUPERACION_PHP_WEB/www&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.php.debug.servers&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -227,6 +224,7 @@
     <MESSAGE value="Delete implementado en categorias" />
     <MESSAGE value="Insert  implementado en categorias con validacion de datos" />
     <MESSAGE value="Cuando da un error se muestran los datos enviados ahora solo se usa una vista para editar y alta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cuando da un error se muestran los datos enviados ahora solo se usa una vista para editar y alta" />
+    <MESSAGE value="Edicion implementada en categorias Ejercicio pendiente de revision" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edicion implementada en categorias Ejercicio pendiente de revision" />
   </component>
 </project>
