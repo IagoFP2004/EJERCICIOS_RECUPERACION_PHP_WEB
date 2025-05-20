@@ -164,4 +164,12 @@ class CategoriaModel extends BaseDbModel
         return $stmt->execute($params);
     }
 
+    public function getAllCategorias():array | false
+    {
+        $sql = "SELECT * FROM categoria";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
 }

@@ -148,4 +148,12 @@ class ProveedorModel extends BaseDbModel
         }
     }
 
+    public function getAllProveedores() : array
+    {
+        $sql = "SELECT * FROM proveedor";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
 }

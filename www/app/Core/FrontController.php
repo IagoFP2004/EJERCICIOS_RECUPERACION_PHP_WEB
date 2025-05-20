@@ -5,6 +5,7 @@ namespace Com\Daw2\Core;
 use Com\Daw2\Controllers\CategoriaController;
 use Com\Daw2\Controllers\EjerciciosController;
 use Com\Daw2\Controllers\PreferenciasController;
+use Com\Daw2\Controllers\ProductoController;
 use Com\Daw2\Controllers\ProveedoresController;
 use Com\Daw2\Controllers\UsuarioSistemaController;
 use Steampixel\Route;
@@ -141,6 +142,17 @@ class FrontController
                 $controlador->editarCategoria((int) $id_categoria);
             },
             'post'
+        );
+
+        //Ejercicio Productos
+
+        Route::add(
+            '/productos',
+            function () {
+                $controlador = new ProductoController();
+                $controlador->listado();
+            },
+            'get'
         );
 
 
