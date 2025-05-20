@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Listasdo listo en productos y categorias y proveedores cargados desde el modelo en EJERCICIO PRODUCTOS">
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Filtros listos en ejercicio Productos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" afterDir="false" />
@@ -214,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747757026768</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Filtros listos en ejercicio Productos">
+      <option name="closed" value="true" />
+      <created>1747758631181</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1747758631181</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +254,7 @@
     <MESSAGE value="Edicion implementada en categorias Ejercicio pendiente de revision" />
     <MESSAGE value="Iniciando ejercicio Productos" />
     <MESSAGE value="Listasdo listo en productos y categorias y proveedores cargados desde el modelo en EJERCICIO PRODUCTOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Listasdo listo en productos y categorias y proveedores cargados desde el modelo en EJERCICIO PRODUCTOS" />
+    <MESSAGE value="Filtros listos en ejercicio Productos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filtros listos en ejercicio Productos" />
   </component>
 </project>

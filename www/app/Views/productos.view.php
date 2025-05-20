@@ -109,15 +109,15 @@
                         <table id="tabladatos" class="table table-striped">
                             <thead>
                             <tr>
-                                <th><a href="/proveedores?order=1">Codigo</a> <i class="fas fa-sort-amount-down-alt"></i></th>
-                                <th><a href="/proveedores?order=2">Nombre</a> </th>
-                                <th><a href="/proveedores?order=3">Nombre Proveedor</a> </th>
-                                <th><a href="/proveedores?order=4">Coste</a> </th>
-                                <th><a href="/proveedores?order=5">Margen</a> </th>
-                                <th><a href="/proveedores?order=5">Stock</a> </th>
-                                <th><a href="/proveedores?order=5">Iva</a> </th>
-                                <th><a href="/proveedores?order=5">Pvp</a> </th>
-                                <th><a href="/proveedores?order=5">Nombre completo de la categoria</a> </th>
+                                <th><a href="<?php echo $_ENV['host.folder'].'productos?'.$url.'&order='.($order==1 ? '-':'') ?>1">Codigo</a> <i class="fas fa-sort-amount-down-alt"></i></th>
+                                <th><a href="<?php echo $_ENV['host.folder'].'productos?'.$url.'&order='.($order==2 ? '-':'') ?>2">Nombre</a> </th>
+                                <th><a href="<?php echo $_ENV['host.folder'].'productos?'.$url.'&order='.($order==3 ? '-':'') ?>3">Nombre Proveedor</a> </th>
+                                <th><a href="<?php echo $_ENV['host.folder'].'productos?'.$url.'&order='.($order==4 ? '-':'') ?>4">Coste</a> </th>
+                                <th><a href="<?php echo $_ENV['host.folder'].'productos?'.$url.'&order='.($order==5 ? '-':'') ?>5">Margen</a> </th>
+                                <th><a href="<?php echo $_ENV['host.folder'].'productos?'.$url.'&order='.($order==6 ? '-':'') ?>6">Stock</a> </th>
+                                <th><a href="<?php echo $_ENV['host.folder'].'productos?'.$url.'&order='.($order==7 ? '-':'') ?>7">Iva</a> </th>
+                                <th><a href="<?php echo $_ENV['host.folder'].'productos?'.$url.'&order='.($order==8 ? '-':'') ?>8">Pvp</a> </th>
+                                <th><a href="<?php echo $_ENV['host.folder'].'productos?'.$url.'&order='.($order==9 ? '-':'') ?>9">Nombre completo de la categoria</a> </th>
                                 <th></th>
                             </tr>
                             </thead>

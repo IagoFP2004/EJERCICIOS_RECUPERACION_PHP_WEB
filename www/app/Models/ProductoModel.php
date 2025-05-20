@@ -6,8 +6,13 @@ use Com\Daw2\Core\BaseDbModel;
 
 class ProductoModel extends BaseDbModel
 {
-    public function get(array $data):array
+
+    public const ORDER_COLUMNS = ['p.codigo','p.nombre','nombre_proveedor','p.coste','p.margen','p.stock','p.iva','pvp','nombre_completo_categoria'];
+    public function get(array $data, int $order):array
     {
+        $sentido = ($order > 0) ? 'ASC' : 'DESC';
+        $order = abs($order);
+
         $condiciones = [];
         $condicionesHaving = [];
         $valores = [];
@@ -78,6 +83,7 @@ class ProductoModel extends BaseDbModel
         if (!empty($condicionesHaving)) {
             $sql .= " HAVING " . implode(" AND ", $condicionesHaving);
         }
+        $sql.= " ORDER BY ".self::ORDER_COLUMNS[$order-1]." ".$sentido;
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($valores);
         return $stmt->fetchAll();
