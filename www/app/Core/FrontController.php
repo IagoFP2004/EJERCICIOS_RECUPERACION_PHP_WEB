@@ -155,6 +155,17 @@ class FrontController
             'get'
         );
 
+        Route::add(
+            '/productos/delete/([A-Z]{3}[0-9]{7})',
+            function ($codigo) {
+                $controlador = new ProductoController();
+                $controlador->deleteProducto((string)$codigo);
+            },
+            'get'
+        );
+
+
+
 
 
         Route::pathNotFound(

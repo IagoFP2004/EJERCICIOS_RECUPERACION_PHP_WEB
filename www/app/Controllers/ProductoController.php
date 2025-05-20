@@ -39,10 +39,23 @@ class ProductoController extends BaseController
         $data['page'] = $this->getNumeroPagina($numeroPaginas);
         $data['max_page']=$numeroPaginas;
 
-
         $data['productos'] = $modelo->get($_GET, $data['order'],$data['page']);
 
         $this->view->showViews(array('templates/header.view.php', 'productos.view.php', 'templates/footer.view.php'), $data);
+    }
+
+    public function deleteProducto(string $codigo):void
+    {
+        $modelo = new ProductoModel();
+        $borrado = $modelo->deleteProducto($codigo);
+
+        if ($borrado !== false) {
+            $_SESSION['mensaje'] = 'Producto eliminado correctamente';
+            header('Location: /productos');
+        }else{
+            $_SESSION['mensajeError'] = 'Error al eliminar el producto, el proveedor provee este producto';
+            header('Location: /productos');
+        }
     }
 
     public function getOrder(): int

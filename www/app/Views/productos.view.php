@@ -4,6 +4,22 @@
         <div class="row">
             <div class="col-12">
                 <div class="card shadow mb-4">
+                    <?php if (isset($_SESSION['mensaje'])){ ?>
+                        <div class="alert alert-success">
+                            <?php
+                            echo $_SESSION['mensaje'];
+                            unset($_SESSION['mensaje']);
+                            ?>
+                        </div>
+                    <?php }?>
+                    <?php if (isset($_SESSION['mensajeError'])){ ?>
+                        <div class="alert alert-danger">
+                            <?php
+                            echo $_SESSION['mensajeError'];
+                            unset($_SESSION['mensajeError']);
+                            ?>
+                        </div>
+                    <?php }?>
                     <form method="get" action="">
                         <input type="hidden" name="order" value="1">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -133,6 +149,7 @@
                                         <td><?php echo $producto['iva']?></td>
                                         <td><?php echo $producto['pvp']?></td>
                                         <td><?php echo $producto['nombre_completo_categoria']?></td>
+                                        <td><a href="<?php echo $_ENV['host.folder'].'productos/delete/'.$producto['codigo'] ?>" target="_blank" class="btn btn-danger ml-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="931506210"><i class="fas fa-trash"></i></a></td>
                                     </tr>
                                 <?php }?>
                             </tbody>

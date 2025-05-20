@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Ordenacion lista en ejercicio Productos">
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Paginacion implementada en ejercicio Productos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Views/productos.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/productos.view.php" afterDir="false" />
     </list>
@@ -66,22 +67,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last.edited.regexp&quot;: &quot;665939982&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/iago.franciscoperez/Descargas/EJERCICIOS_RECUPERACION_PHP_WEB/www&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.php.debug.servers&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last.edited.regexp": "ACE0000151",
+    "last_opened_file_path": "/home/iago.franciscoperez/Descargas/EJERCICIOS_RECUPERACION_PHP_WEB/www",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.php.debug.servers",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -230,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747760099931</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Paginacion implementada en ejercicio Productos">
+      <option name="closed" value="true" />
+      <created>1747761609406</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1747761609406</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +273,7 @@
     <MESSAGE value="Listasdo listo en productos y categorias y proveedores cargados desde el modelo en EJERCICIO PRODUCTOS" />
     <MESSAGE value="Filtros listos en ejercicio Productos" />
     <MESSAGE value="Ordenacion lista en ejercicio Productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ordenacion lista en ejercicio Productos" />
+    <MESSAGE value="Paginacion implementada en ejercicio Productos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Paginacion implementada en ejercicio Productos" />
   </component>
 </project>

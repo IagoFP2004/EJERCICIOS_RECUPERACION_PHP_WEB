@@ -2,6 +2,7 @@
 
 namespace Com\Daw2\Models;
 
+use Com\Daw2\Controllers\ProductoController;
 use Com\Daw2\Core\BaseDbModel;
 
 class ProductoModel extends BaseDbModel
@@ -98,6 +99,38 @@ class ProductoModel extends BaseDbModel
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         return $stmt->fetchColumn();
+    }
+
+    public function nosProvee(string $codigo): bool
+    {
+        $sql = "SELECT proveedor FROM producto WHERE codigo = :codigo";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':codigo' => $codigo]);
+        $proveedor = $stmt->fetchColumn();
+
+        if (!$proveedor) {
+            return false; // Producto no existe o no tiene proveedor
+        }
+
+        $sql = "SELECT COUNT(*) FROM producto WHERE proveedor = :proveedor";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':proveedor' => $proveedor]);
+        $total = $stmt->fetchColumn();
+
+        return $total > 1;
+    }
+
+
+    public function deleteProducto(string $codigo):bool
+    {
+        if ($this->nosProvee($codigo)){
+            return false;
+        }
+
+        $sql = "DELETE FROM producto WHERE codigo = :codigo";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(["codigo" => $codigo]);
+        return $stmt->rowCount() > 0;
     }
 
 }
