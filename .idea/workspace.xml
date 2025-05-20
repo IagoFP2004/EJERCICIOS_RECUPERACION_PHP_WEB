@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Filtros listos en ejercicio Productos">
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Ordenacion lista en ejercicio Productos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" afterDir="false" />
@@ -222,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747758631181</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Ordenacion lista en ejercicio Productos">
+      <option name="closed" value="true" />
+      <created>1747760099931</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1747760099931</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +263,7 @@
     <MESSAGE value="Iniciando ejercicio Productos" />
     <MESSAGE value="Listasdo listo en productos y categorias y proveedores cargados desde el modelo en EJERCICIO PRODUCTOS" />
     <MESSAGE value="Filtros listos en ejercicio Productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filtros listos en ejercicio Productos" />
+    <MESSAGE value="Ordenacion lista en ejercicio Productos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ordenacion lista en ejercicio Productos" />
   </component>
 </project>

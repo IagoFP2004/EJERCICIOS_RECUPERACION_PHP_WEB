@@ -8,10 +8,12 @@ class ProductoModel extends BaseDbModel
 {
 
     public const ORDER_COLUMNS = ['p.codigo','p.nombre','nombre_proveedor','p.coste','p.margen','p.stock','p.iva','pvp','nombre_completo_categoria'];
-    public function get(array $data, int $order):array
+    public function get(array $data, int $order, int $page):array
     {
         $sentido = ($order > 0) ? 'ASC' : 'DESC';
         $order = abs($order);
+
+        $limite = $_ENV['numero.pagina'];
 
         $condiciones = [];
         $condicionesHaving = [];
@@ -84,8 +86,18 @@ class ProductoModel extends BaseDbModel
             $sql .= " HAVING " . implode(" AND ", $condicionesHaving);
         }
         $sql.= " ORDER BY ".self::ORDER_COLUMNS[$order-1]." ".$sentido;
+        $sql.= " LIMIT ".($page-1)*$limite.",".$limite;
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($valores);
         return $stmt->fetchAll();
     }
+
+    public function countResults():int
+    {
+        $sql = "SELECT COUNT(*) FROM producto";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
+
 }

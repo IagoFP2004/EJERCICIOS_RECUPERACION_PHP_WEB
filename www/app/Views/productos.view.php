@@ -141,32 +141,35 @@
                     <div class="card-footer">
                         <nav aria-label="Navegacion por paginas">
                             <ul class="pagination justify-content-center">
+                                <?php if ($page > 1){?>
                                 <li class="page-item">
-                                    <a class="page-link" href="/proveedores?page=1&amp;order=1" aria-label="First">
+                                    <a class="page-link" href="<?php echo $_ENV['host.folder'].'productos?'.$urlDos.'&page=1'?>" aria-label="First">
                                         <span aria-hidden="true">«</span>
                                         <span class="sr-only">First</span>
                                     </a>
                                 </li>
                                 <li class="page-item">
-                                    <a class="page-link" href="/proveedores?page=2&amp;order=1" aria-label="Previous">
+                                    <a class="page-link" href="<?php echo $_ENV['host.folder'].'productos?'.$urlDos.'&page='.($page -1)?>" aria-label="Previous">
                                         <span aria-hidden="true">&lt;</span>
                                         <span class="sr-only">Previous</span>
                                     </a>
                                 </li>
-
-                                <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                             <?php }?>
+                                <li class="page-item active"><a class="page-link" href="#"><?php echo $page ?></a></li>
+                                <?php if ($page < $max_page){?>
                                 <li class="page-item">
-                                    <a class="page-link" href="/proveedores?page=4&amp;order=1" aria-label="Next">
+                                    <a class="page-link" href="<?php echo $_ENV['host.folder'].'productos?'.$urlDos.'&page='.($page +1)?>" aria-label="Next">
                                         <span aria-hidden="true">&gt;</span>
                                         <span class="sr-only">Next</span>
                                     </a>
                                 </li>
                                 <li class="page-item">
-                                    <a class="page-link" href="/proveedores?page=8&amp;order=1" aria-label="Last">
+                                    <a class="page-link" href="<?php echo $_ENV['host.folder'].'productos?'.$urlDos.'&page='.$max_page?>" aria-label="Last">
                                         <span aria-hidden="true">»</span>
                                         <span class="sr-only">Last</span>
                                     </a>
                                 </li>
+                                <?php }?>
                             </ul>
                         </nav>
                     </div>

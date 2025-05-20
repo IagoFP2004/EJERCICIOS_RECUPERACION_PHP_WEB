@@ -30,7 +30,17 @@ class ProductoController extends BaseController
 
         $data['order'] = $this->getOrder();
 
-        $data['productos'] = $modelo->get($_GET, $data['order']);
+        $copia_GET_2 = $_GET;
+        unset($copia_GET['page']);
+        $data['urlDos'] = http_build_query($copia_GET_2);
+
+        $numeroRegistros = $modelo->countResults();
+        $numeroPaginas = $this->getNumeroPaginas($numeroRegistros);
+        $data['page'] = $this->getNumeroPagina($numeroPaginas);
+        $data['max_page']=$numeroPaginas;
+
+
+        $data['productos'] = $modelo->get($_GET, $data['order'],$data['page']);
 
         $this->view->showViews(array('templates/header.view.php', 'productos.view.php', 'templates/footer.view.php'), $data);
     }
@@ -46,4 +56,19 @@ class ProductoController extends BaseController
         return 1;
     }
 
+    public function getNumeroPaginas(int $numeroPaginas): int
+    {
+        return (int)$numeroPaginas/$_ENV['numero.pagina'];
+    }
+
+    public function getNumeroPagina(int $numeroPaginas): int
+    {
+        if (isset($_GET['page'])) {
+            $page = (int)$_GET['page'];
+            if ($page >= 1 && $page <= $numeroPaginas) {
+                return (int) $page;
+            }
+        }
+        return 1;
+    }
 }
