@@ -164,6 +164,24 @@ class FrontController
             'get'
         );
 
+        Route::add(
+            '/productos/new',
+            function () {
+                $controlador = new ProductoController();
+                $controlador->menuAlta();
+            },
+            'get'
+        );
+
+        Route::add(
+            '/productos/new',
+            function () {
+                $controlador = new ProductoController();
+                $controlador->realizarAltaProducto();
+            },
+            'post'
+        );
+
 
 
 

@@ -87,6 +87,14 @@ class ProveedorModel extends BaseDbModel
         return $stmt->fetch();
     }
 
+    public function getByCodigo(string $codigo) : array | false
+    {
+        $sql = "SELECT * FROM proveedor WHERE codigo = :codigo";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['codigo' => $codigo]);
+        return $stmt->fetch();
+    }
+
     public function insertarProveedor(array $data) : bool
     {
         $sql =" INSERT INTO `proveedor`(`cif`, `codigo`, `nombre`, `direccion`, `website`, `email`, `telefono`, `id_country`) 
