@@ -88,6 +88,7 @@ class ProductoController extends BaseController
         $errores = $this->checkErrors($_POST);
 
         if($errores === []){
+            $modelo = new ProductoModel();
 
         }else{
             $data['errores'] = $errores;
