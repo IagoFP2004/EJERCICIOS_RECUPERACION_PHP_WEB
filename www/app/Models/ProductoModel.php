@@ -137,4 +137,22 @@ class ProductoModel extends BaseDbModel
         ]);
     }
 
+    public function updateProducto(string $codigo, array $data):bool
+    {
+        $sql = "UPDATE producto SET codigo = :nuevo_codigo, nombre = :nombre, descripcion = :descripcion, proveedor = :proveedor, 
+                id_categoria = :id_categoria, coste = :coste, margen = :margen, iva = :iva WHERE codigo = :codigo_original";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([
+            "nuevo_codigo" => $data['codigo'],
+            "codigo_original" => $codigo,
+            "nombre" => $data['nombre'],
+            "descripcion" => $data['descripcion'],
+            "proveedor" => $data['id_proveedor'],
+            "id_categoria" => $data['id_categoria'],
+            "coste" => $data['coste'],
+            "margen" => $data['margen'],
+            "iva" => $data['iva']
+        ]);
+    }
+
 }

@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Añadida la seccion de productos a left-menu.view.php">
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Insercion de productos integrada en ejercicio Productos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Core/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Core/FrontController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Views/productoAltaEdit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/productoAltaEdit.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Views/productos.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/productos.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +114,7 @@
       <workItem from="1747143871022" duration="3423000" />
       <workItem from="1748003451332" duration="648000" />
       <workItem from="1748004257943" duration="730000" />
-      <workItem from="1748073665464" duration="2060000" />
+      <workItem from="1748073665464" duration="3923000" />
     </task>
     <task id="LOCAL-00001" summary="Implementado barra lateral gestor de proveedores">
       <option name="closed" value="true" />
@@ -250,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748004022344</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Insercion de productos integrada en ejercicio Productos">
+      <option name="closed" value="true" />
+      <created>1748075926109</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1748075926109</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +296,7 @@
     <MESSAGE value="Ordenacion lista en ejercicio Productos" />
     <MESSAGE value="Paginacion implementada en ejercicio Productos" />
     <MESSAGE value="Añadida la seccion de productos a left-menu.view.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadida la seccion de productos a left-menu.view.php" />
+    <MESSAGE value="Insercion de productos integrada en ejercicio Productos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Insercion de productos integrada en ejercicio Productos" />
   </component>
 </project>

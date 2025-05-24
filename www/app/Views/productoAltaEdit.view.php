@@ -37,10 +37,10 @@
                                 </div>
                                 <div class="col-12 col-lg-4">
                                     <div class="mb-3">
-                                        <label for="id_proveedor">Categoria:</label>
+                                        <label for="id_proveedor">Proveedor:</label>
                                         <select name="id_proveedor" id="id_proveedor" class="form-control" data-placeholder="Tipo proveedor">
                                             <?php foreach ($proveedores as $proveedor){ ?>
-                                                <option value="<?php echo $proveedor['cif']; ?> <?php echo (isset($input['cif']) && $input['cif'] == $proveedor['cif']) ? 'selected' : ''; ?>"><?php echo $proveedor['nombre']; ?></option>                                            <?php } ?>
+                                                <option value="<?php echo $proveedor['cif'] ?>" <?php echo (isset($input['cif']) && $input['cif'] == $proveedor['cif']) ? 'selected' : ''; ?>><?php echo $proveedor['nombre']; ?></option>                                            <?php } ?>
                                         </select>
                                         <p class="text-danger"><?php echo $errores['id_proveedor'] ?? '' ?></p>
                                     </div>
@@ -49,7 +49,7 @@
                                     <label for="id_categoria">Categoria:</label>
                                     <select name="id_categoria" id="id_categoria" class="form-control" data-placeholder="Categorias">
                                         <?php foreach ($categorias as $categoria){ ?>
-                                            <option value="<?php echo $categoria['id_categoria']?> <?php echo (isset($input['id_categoria']) && $input['id_categoria'] == $categoria['id_categoria'] ? 'selected':'') ?>"><?php echo $categoria['nombre_categoria']?></option>
+                                            <option value="<?php echo $categoria['id_categoria']?>" <?php echo (isset($input['id_categoria']) && $input['id_categoria'] == $categoria['id_categoria'] ? 'selected':'') ?>><?php echo $categoria['nombre_categoria']?></option>
                                         <?php } ?>
                                     </select>
                                     <p class="text-danger"><?php echo $errores['id_categoria'] ?? '' ?></p>
@@ -84,7 +84,7 @@
                             <div class="col-12 text-right">
                                 <a href="/productos" value="" name="reiniciar" class="btn btn-danger ml-2">Cancelar</a>
                                 <a href="/productos/new" value="" name="reiniciar" class="btn btn-danger ml-2">Reiniciar filtros</a>
-                                <input type="submit" value="Añadir" name="enviar" class="btn btn-primary ml-2">
+                                <input type="submit" value="Guardar" name="enviar" class="btn btn-primary ml-2">
                             </div>
                         </div>
                     </form>

@@ -108,6 +108,69 @@ class ProductoController extends BaseController
         $this->view->showViews(array('templates/header.view.php', 'productoAltaEdit.view.php', 'templates/footer.view.php'), $data);
     }
 
+    public function mostrarMenuEdit(string $codigo):void
+    {
+        $data = array(
+            'titulo' => 'Gestion de Productos',
+            'breadcrumb' => ['Inicio'],
+            'seccion' => '/inicio/productos/Edit Producto'
+        );
+
+        $modelo = new ProductoModel();
+        $proveedorModel = new ProveedorModel();
+        $categoriaModel = new CategoriaModel();
+
+        $data['input'] = $modelo->getByCodigo($codigo);
+        $data['proveedores'] = $proveedorModel->getAllProveedores();
+        $data['categorias'] = $categoriaModel->getAllCategorias();
+
+        $this->view->showViews(array('templates/header.view.php', 'productoAltaEdit.view.php', 'templates/footer.view.php'), $data);
+    }
+
+    public function editarProducot(string $codigo):void
+    {
+        $data = array(
+            'titulo' => 'Gestion de Productos',
+            'breadcrumb' => ['Inicio'],
+            'seccion' => '/inicio/productos/Edit Producto'
+        );
+
+        $proveedorModel = new ProveedorModel();
+        $categoriaModel = new CategoriaModel();
+
+        $errores = $this->checkErrors($_POST, $codigo);
+
+        if ($errores === []) {
+            $modelo = new ProductoModel;
+            $edit = $modelo->updateProducto($codigo,[
+                'codigo' => $_POST['codigo'],
+                'nombre' => $_POST['nombre'],
+                'descripcion' => $_POST['descripcion'],
+                'id_proveedor' => $_POST['id_proveedor'],
+                'id_categoria' => $_POST['id_categoria'],
+                'coste' => $_POST['coste'],
+                'margen' => $_POST['margen'] ?? 0,
+                'iva' => $_POST['iva']
+            ]);
+
+            if($edit !== false){
+                $_SESSION['mensaje'] = 'Producto editado correctamente';
+                header('Location: /productos');
+            }else{
+                $_SESSION['mensajeError'] = 'Error al editar el producto';
+                header('Location: /productos');
+            }
+
+        }else{
+            $data['errores'] = $errores;
+            $data['input'] = filter_var_array($_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $data['proveedores'] = $proveedorModel->getAllProveedores();
+            $data['categorias'] = $categoriaModel->getAllCategorias();
+        }
+
+        $this->view->showViews(array('templates/header.view.php', 'productoAltaEdit.view.php', 'templates/footer.view.php'), $data);
+    }
+
     public function getOrder(): int
     {
         if (isset($_GET['order'])) {
@@ -135,7 +198,7 @@ class ProductoController extends BaseController
         return 1;
     }
 
-    public function checkErrors(array $data):array
+    public function checkErrors(array $data, ?string $codigoOriginal = null ):array
     {
         $errores = [];
         $modelo = new ProductoModel();
@@ -144,12 +207,13 @@ class ProductoController extends BaseController
 
         if(empty($data['codigo'])){
             $errores['codigo'] = 'Codigo es requerido';
+        }
+        else if($data['codigo'] !== $codigoOriginal && $modelo->getByCodigo($data['codigo']) !== false){
+            $errores['codigo'] = 'Codigo ya existe';
         }else if(!is_string($data['codigo'])){
             $errores['codigo'] = 'Codigo debe ser un string';
         }else if(mb_strlen($data['codigo']) > 10){
             $errores['codigo'] = 'Codigo no debe tener mas de 10 caracteres';
-        }else if($modelo->getByCodigo($data['codigo']) !== false){
-            $errores['codigo'] = 'Codigo ya existe';
         }
 
         if(empty($data['nombre'])){

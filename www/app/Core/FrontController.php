@@ -182,8 +182,23 @@ class FrontController
             'post'
         );
 
+        Route::add(
+            '/productos/edit/([A-Z]{3}[0-9]{7})',
+            function ($codigo) {
+                $controlador = new ProductoController();
+                $controlador->mostrarMenuEdit((string)$codigo);
+            },
+            'get'
+        );
 
-
+        Route::add(
+            '/productos/edit/([A-Z]{3}[0-9]{7})',
+            function ($codigo) {
+                $controlador = new ProductoController();
+                $controlador->editarProducot((string)$codigo);
+            },
+            'post'
+        );
 
 
         Route::pathNotFound(
