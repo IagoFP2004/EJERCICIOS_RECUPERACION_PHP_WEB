@@ -60,6 +60,14 @@ class FrontController
             );
         }else{
             Route::add(
+                '/logout',
+                function () {
+                    session_destroy();
+                    header('Location: /login');
+                },
+                'get'
+            );
+            Route::add(
                 '/',
                 function () {
                     $controlador = new \Com\Daw2\Controllers\InicioController();
