@@ -4,22 +4,6 @@
         <div class="row">
             <div class="col-12">
                 <div class="card shadow mb-4">
-                    <?php if (isset($_SESSION['mensaje'])){ ?>
-                        <div class="alert alert-success">
-                            <?php
-                            echo $_SESSION['mensaje'];
-                            unset($_SESSION['mensaje']);
-                            ?>
-                        </div>
-                    <?php }?>
-                    <?php if (isset($_SESSION['mensajeError'])){ ?>
-                        <div class="alert alert-danger">
-                            <?php
-                            echo $_SESSION['mensajeError'];
-                            unset($_SESSION['mensajeError']);
-                            ?>
-                        </div>
-                    <?php }?>
                     <form method="post" action="">
                         <input type="hidden" name="order" value="1">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -53,10 +37,10 @@
                                 </div>
                                 <div class="col-12 col-lg-4">
                                     <div class="mb-3">
-                                        <label for="id_proveedor">Proveedor:</label>
-                                        <select name="id_proveedor[]" id="id_proveedor" class="form-control select2" data-placeholder="Tipo proveedor" multiple>
+                                        <label for="id_proveedor">Categoria:</label>
+                                        <select name="id_proveedor" id="id_proveedor" class="form-control" data-placeholder="Tipo proveedor">
                                             <?php foreach ($proveedores as $proveedor){ ?>
-                                                <option value="<?php echo $proveedor['cif']; ?>" <?php echo (isset($input['cif']) && $input['cif'] == $proveedor['cif']) ? 'selected' : ''; ?>><?php echo $proveedor['nombre']; ?></option>                                            <?php } ?>
+                                                <option value="<?php echo $proveedor['cif']; ?> <?php echo (isset($input['cif']) && $input['cif'] == $proveedor['cif']) ? 'selected' : ''; ?>"><?php echo $proveedor['nombre']; ?></option>                                            <?php } ?>
                                         </select>
                                         <p class="text-danger"><?php echo $errores['id_proveedor'] ?? '' ?></p>
                                     </div>

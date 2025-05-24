@@ -117,4 +117,24 @@ class ProductoModel extends BaseDbModel
         return $stmt->fetch();
     }
 
+    public function altaProducto(array $data):bool
+    {
+        $sql = "INSERT INTO producto (codigo, nombre, descripcion, proveedor, id_categoria, coste, margen, iva) 
+                VALUES (:codigo, :nombre, :descripcion, :proveedor, :id_categoria, :coste, :margen,:iva)";
+        $stmt = $this->pdo->prepare($sql);
+        if (empty($data['margen'])){
+            $data['margen'] = 0;
+        }
+        return $stmt->execute([
+            "codigo" => $data['codigo'],
+            "nombre" => $data['nombre'],
+            "descripcion" => $data['descripcion'],
+            "proveedor" => $data['id_proveedor'],
+            "id_categoria" => $data['id_categoria'],
+            "coste" => $data['coste'],
+            "margen" => $data['margen'],
+            "iva" => $data['iva']
+        ]);
+    }
+
 }

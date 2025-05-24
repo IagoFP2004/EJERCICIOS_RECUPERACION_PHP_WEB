@@ -89,7 +89,15 @@ class ProductoController extends BaseController
 
         if($errores === []){
             $modelo = new ProductoModel();
+            $insertar = $modelo->altaProducto($_POST);
 
+            if($insertar !== false){
+                $_SESSION['mensaje'] = 'Producto insertado correctamente';
+                header('Location: /productos');
+            }else{
+                $_SESSION['mensajeError'] = 'Error al insertar el producto';
+                header('Location: /productos');
+            }
         }else{
             $data['errores'] = $errores;
             $data['input'] = filter_var_array($_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -161,10 +169,8 @@ class ProductoController extends BaseController
         }
 
         if (!empty($data['id_proveedor'])) {
-            foreach ($data['id_proveedor'] as $id_proveedor) {
-                if ($proveedorModel->getByCodigo((string)$id_proveedor) !== false) {
-                    $errores['id_proveedor'] = 'El proveedor seleccionado no es valido';
-                }
+            if ($proveedorModel->getByCodigo($data['id_proveedor']) !== false) {
+                $errores['id_proveedor'] = 'El proveedor seleccionado no es valido';
             }
         }
 
@@ -178,8 +184,8 @@ class ProductoController extends BaseController
 
         if(empty($data['coste'])){
             $errores['coste'] = 'Coste es requerido';
-        }else if(!is_float($data['coste'])){
-            $errores['coste'] = 'Coste debe ser un numero';
+        }else if(!filter_var($data['coste'], FILTER_VALIDATE_FLOAT)){
+            $errores['coste'] = 'Coste debe ser un numero decimal';
         }else if($data['coste'] < 0){
             $errores['coste'] = 'Coste no puede ser negativo';
         }else if (!number_format($data['coste'], 2, '.', '')){

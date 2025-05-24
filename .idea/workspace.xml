@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Paginacion implementada en ejercicio Productos">
+    <list default="true" id="c83e8629-5f84-42fa-93b8-7ab8cf0a110d" name="Changes" comment="Añadida la seccion de productos a left-menu.view.php">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Controllers/ProductoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app/Views/templates/left-menu.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/templates/left-menu.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/www/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Models/ProductoModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app/Views/productoAltaEdit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/app/Views/productoAltaEdit.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +32,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/IagoFP2004/EJERCICIOS_RECUPERACION_PHP_WEB.git&quot;,
-    &quot;accountId&quot;: &quot;cd4f672e-e66c-44f4-b263-2ab8f221a3cd&quot;
+    &quot;accountId&quot;: &quot;b8e64c60-adfd-4807-905c-a950a507465d&quot;
   }
 }</component>
   <component name="PhpServers">
@@ -65,23 +66,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last.edited.regexp": "ACE0000151",
-    "last_opened_file_path": "C:/Users/iagof/Desktop/EJERCICIOS_RECUPERACION_PHP_WEB",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.php.debug.servers",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last.edited.regexp&quot;: &quot;ACE0000151&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/iagof/Desktop/EJERCICIOS_RECUPERACION_PHP_WEB&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.php.debug.servers&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -109,7 +110,9 @@
       <workItem from="1746544717291" duration="1410000" />
       <workItem from="1746612737170" duration="3059000" />
       <workItem from="1747143871022" duration="3423000" />
-      <workItem from="1748003451332" duration="383000" />
+      <workItem from="1748003451332" duration="648000" />
+      <workItem from="1748004257943" duration="730000" />
+      <workItem from="1748073665464" duration="2060000" />
     </task>
     <task id="LOCAL-00001" summary="Implementado barra lateral gestor de proveedores">
       <option name="closed" value="true" />
@@ -239,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747761609406</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Añadida la seccion de productos a left-menu.view.php">
+      <option name="closed" value="true" />
+      <created>1748004022344</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1748004022344</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +285,7 @@
     <MESSAGE value="Filtros listos en ejercicio Productos" />
     <MESSAGE value="Ordenacion lista en ejercicio Productos" />
     <MESSAGE value="Paginacion implementada en ejercicio Productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Paginacion implementada en ejercicio Productos" />
+    <MESSAGE value="Añadida la seccion de productos a left-menu.view.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadida la seccion de productos a left-menu.view.php" />
   </component>
 </project>
